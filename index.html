@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>今日の天気</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Material Symbols Outlined for modern icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+</head>
+<body>
+    <div class="app-container" id="app-container">
+        <div class="weather-card">
+            <header class="card-header">
+                <h2>今日の天気</h2>
+                <button id="location-btn" class="icon-button" aria-label="現在地を取得" title="現在地から天気を取得">
+                    <span class="material-symbols-outlined">my_location</span>
+                </button>
+            </header>
+
+            <div class="main-weather">
+                <div class="weather-icon-container">
+                    <span id="weather-icon" class="material-symbols-outlined main-icon">routine</span>
+                </div>
+                <div class="temperature">
+                    <span id="temp-value">--</span><span class="temp-unit">°C</span>
+                </div>
+                <div id="weather-description" class="description">データを取得中...</div>
+                <div id="location-name" class="location">--</div>
+            </div>
+
+            <div class="weather-details">
+                <div class="detail-item">
+                    <span class="material-symbols-outlined detail-icon">device_thermostat</span>
+                    <div class="detail-info">
+                        <span class="detail-label">最高・最低</span>
+                        <span id="temp-high-low" class="detail-value">--° / --°</span>
+                    </div>
+                </div>
+                <div class="detail-item">
+                    <span class="material-symbols-outlined detail-icon">water_drop</span>
+                    <div class="detail-info">
+                        <span class="detail-label">降水確率</span>
+                        <span id="precip-prob" class="detail-value">--%</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="error-message" class="error-message hidden">
+                現在地の取得に失敗しました。位置情報の利用を許可してください。
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
